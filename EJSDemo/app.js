@@ -12,6 +12,16 @@ app.get("/fallinlovewith/:thing", function(req, res){
     console.log(thing);
 })
 
+app.get("/posts/",function(req, res){
+    var posts = [
+        {title: "Post 1", author:"Kevin"},
+        {title: "My adorable pet bunny", author:"Susan"},
+        {title: "Can you believe this car", author:"Kitty"},
+        ];
+        
+        res.render("posts.ejs",{posts:posts});
+})
+
 app.get("*", function(req, res){
     res.send("There is something wrong!");
 })
