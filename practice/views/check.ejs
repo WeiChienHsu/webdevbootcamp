@@ -1,0 +1,14 @@
+<h1> Please input your Number </h1>
+
+
+
+<form action="/checkResult" method="POST">
+<input type="text" placeholder="1" name="num1"> </input>
+<span> + </span>
+<input type="text" placeholder="2" name="num2"> </input>
+<button type="submit"> = </button>
+</form>
+
+<% for (var i = 0; i < check.length; i+=3){ %>
+    <li> <%= check[i] %> + <%= check[i+1] %> = <%= check[i+2] %> </li>
+<% } %>
