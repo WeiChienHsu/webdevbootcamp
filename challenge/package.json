@@ -1,15 +1,15 @@
 {
-  "name": "packagejsondemo",
+  "name": "challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Kevin Hsu",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "cat-me": "^1.0.3",
+    "ejs": "^2.5.7",
     "express": "^4.16.2"
   }
 }

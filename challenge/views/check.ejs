@@ -1,0 +1,14 @@
+<% include partials/header %> 
+<h1> Here is the lists of yours</h1>
+
+<% for (var i = 0; i < checks.length; i ++){ %>
+    <li> You need to finish : <strong><%= checks[i] %></strong> </li>
+<% } %>
+
+<h2> Please input your check lists here:</h2>
+
+<form action="/addCheckList" method="POST">
+<input type="text" placeholder="Eat a pizza" name="checklist">
+<button type="submit"> Hey! Help me add this list!</button>
+</form>
+<% include partials/footer %> 
