@@ -18,7 +18,6 @@ app.get("/results",function(req, res){
             res.render("result",{data:data});
         }       
    });
-
     
 });
 
