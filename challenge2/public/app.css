@@ -1,0 +1,14 @@
+body {
+    color:darkgreen;
+    background-color: lightblue;
+    text-align: center;
+}
+
+h1{
+    color:brown;
+}
+
+input{
+    height:40px;
+    font-size:35px;
+}

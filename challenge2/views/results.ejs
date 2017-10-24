@@ -1,0 +1,8 @@
+<% include partials/header %> 
+<h1>The result is: </h1>
+<% data["Search"].forEach(function(movie){ %>
+    <li><strong> <a href=<%= movie["Poster"] %> ><%= movie["Title"] %></a> - </strong><%= movie["Year"] %></li>
+<% }); %>
+<br>
+<a href="/"> Back to SEARCH PAGE</a>
+<% include partials/footer %> 

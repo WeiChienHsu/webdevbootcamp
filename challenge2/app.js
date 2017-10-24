@@ -12,9 +12,14 @@ app.get("/",function(req, res){
 
 //ROUTE Results page (Get the information from api)
 app.get("/results",function(req, res){
-    var data;
-    res.render("results",{data:data});
-    console.log("req.query");
+    var searchInput = req.query.search; // set a input variable
+    var url = "http://www.omdbapi.com/?s=";    
+    request(url + searchInput + "&apikey=thewdb",function(error, response, body){
+        if(!error && response.statusCode == 200){
+            var data = JSON.parse(body); // parse body from strings to JSON
+            res.render("results",{data:data});
+        }
+    })
 })
 
 
