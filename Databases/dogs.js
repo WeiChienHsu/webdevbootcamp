@@ -12,20 +12,20 @@ var catSchema = new mongoose.Schema({
 var Cat = mongoose.model("Cat",catSchema);
 
 // adding a new cat to the DB
-// var kevin = new Cat({
-//     name:"Peter",
-//     age:21,
-//     temperamnet:"Fatty"
-// });
+var kevin = new Cat({
+    name:"Peter",
+    age:21,
+    temperamnet:"Fatty"
+});
 
-// kevin.save(function(error,cat){
-//     if(error){
-//         console.log("Something went WRONG!");
-//     } else{
-//         console.log("We Just Saved a cat to the DB");
-//         console.log(cat);
-//     }
-// }); 
+kevin.save(function(error,cat){
+    if(error){
+        console.log("Something went WRONG!");
+    } else{
+        console.log("We Just Saved a cat to the DB");
+        console.log(cat);
+    }
+}); 
 
 // cat is sent by database!!!! // Kevin is from JavaScript
 
