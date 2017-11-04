@@ -57,10 +57,19 @@ User.register(new User({username:req.body.username}),req.body.password, function
             res.redirect("/secret"); //once the user sign up
        }); 
     });
-})
+});
+
+// Login Routes
 
 app.get("/login", function(req, res){
     res.render("login");
+})
+
+app.post("/login", passport.authenticate("local",{
+    successRedirect:"/secret",
+    failureRedirect:"/login"
+}),function(req, res){
+    
 })
 
 app.listen(process.env.PORT, process.env.IP, function(){
