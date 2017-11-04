@@ -59,6 +59,10 @@ User.register(new User({username:req.body.username}),req.body.password, function
     });
 })
 
+app.get("/login", function(req, res){
+    res.render("login");
+})
+
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("connect!");
 })
