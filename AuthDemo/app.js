@@ -52,10 +52,10 @@ User.register(new User({username:req.body.username}),req.body.password, function
        if(err){
             console.log(err);
             return res.render('register');
-            });
+        } //user stragety
         passport.authenticate("local")(req, res, function(){
-
-       } 
+            res.redirect("/secret"); //once the user sign up
+       }); 
     });
 })
 
