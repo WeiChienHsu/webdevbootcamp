@@ -22,7 +22,7 @@ app.set('view engine','ejs');
 app.use(passport.initialize());
 app.use(passport.session());
 // 
-
+passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -46,8 +46,6 @@ app.get("/register", function(req, res){
 });
 //handling user sign up
 app.post("/register", function(req, res){
-    req.body.username
-    
 User.register(new User({username:req.body.username}),req.body.password, function(err, user){
        if(err){
             console.log(err);
@@ -65,13 +63,14 @@ app.get("/login", function(req, res){
     res.render("login");
 })
 
+// middleware
 app.post("/login", passport.authenticate("local",{
     successRedirect:"/secret",
     failureRedirect:"/login"
 }),function(req, res){
-    
-})
+    ////
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("connect!");
-})
+});
