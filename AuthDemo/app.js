@@ -64,7 +64,7 @@ app.post("/login", passport.authenticate("local",{
     successRedirect:"/secret",
     failureRedirect:"/login"
 }),function(req, res){
-    ////
+    res.send("User is "+ req.user.id);
 });
 
 app.get("/logout", function(req, res){
